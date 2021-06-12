@@ -1,0 +1,16 @@
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\bin\Debug\net5.0\PeriodicTableName.exe
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\bin\Debug\net5.0\PeriodicTableName.deps.json
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\bin\Debug\net5.0\PeriodicTableName.runtimeconfig.json
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\bin\Debug\net5.0\PeriodicTableName.runtimeconfig.dev.json
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\bin\Debug\net5.0\PeriodicTableName.dll
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\bin\Debug\net5.0\ref\PeriodicTableName.dll
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\bin\Debug\net5.0\PeriodicTableName.pdb
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\PeriodicTableName.csproj.AssemblyReference.cache
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\PeriodicTableName.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\PeriodicTableName.AssemblyInfoInputs.cache
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\PeriodicTableName.AssemblyInfo.cs
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\PeriodicTableName.csproj.CoreCompileInputs.cache
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\PeriodicTableName.dll
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\ref\PeriodicTableName.dll
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\PeriodicTableName.pdb
+C:\Code\Csharp\Periodic Table Name\PeriodicTableName\PeriodicTableName\obj\Debug\net5.0\PeriodicTableName.genruntimeconfig.cache

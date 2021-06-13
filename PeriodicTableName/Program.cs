@@ -50,20 +50,28 @@ namespace PeriodicTableName
                 ElementsFromName.Shuffle();
                 string Something = string.Join("", ElementsFromName);
                 string somethingElse = string.Join(" ", ElementsFromName);
+                if (Something.Length < enteredName.Length)
+                {
+                    break;
+                }
                 if (Something.Substring(0,enteredName.Length) == (enteredName))
                 {
                     Console.WriteLine("Congratulations! Your name can be made from the periodic table:");
-                    int index = Something.IndexOf(enteredName);
-                    string finalString = somethingElse.Substring(index, index + (somethingElse.Length - enteredName.Length));
-                    Console.WriteLine(finalString);
+                    string finalString = somethingElse.Substring(0, (somethingElse.Length - Something.Length) + enteredName.Length - 1); 
+                    
                     string[] elementsInName = finalString.Split(' ');
                     
                     Elements = Elements.Select(s => s.ToUpper()).ToArray();
 
                     for (int j = 0; j < elementsInName.Length; j++)
                     {
-                        Console.WriteLine(ElementNames[Array.IndexOf(Elements, elementsInName[j].ToUpper())]);
+                        int newIndex = Array.IndexOf(Elements, elementsInName[j].ToUpper());
+                        if (newIndex != -1)
+                        {
+                            Console.WriteLine($"{ ElementNames[newIndex]} (Element Number {newIndex+1})");
+                        }
                     }
+                    Console.WriteLine(finalString);
                     return;
                 }
             }

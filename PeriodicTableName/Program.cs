@@ -57,13 +57,36 @@ namespace PeriodicTableName
                 if (Something.Substring(0,enteredName.Length) == (enteredName))
                 {
                     Console.WriteLine("\nCongratulations! Your name can be made from the periodic table:");
-                    int toSubtract = 0;
-                    if (enteredName.Length % 2 == 0)
+
+                    string finalString = "";
+                    int index = 0;
+                    for (int u = 0; u < ElementsFromName.Count; u++)
                     {
-                        toSubtract = 1;
+                        string temp = ElementsFromName[u];
+                        if (temp.Length == 1)
+                        {
+                            index+= 2;
+                            if (temp == enteredName.Substring(enteredName.Length - 1))
+                            {
+                                index--;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            index += 3;
+                            if (temp == enteredName.Substring(enteredName.Length - 2))
+                            {
+                                index--;
+                                break;
+                            }
+                        }
                     }
-                    string finalString = somethingElse.Substring(0, (somethingElse.Length - Something.Length) + enteredName.Length - toSubtract); 
-                    
+
+                    finalString = somethingElse.Substring(0, index);
+
+                    Console.WriteLine("Debug " + finalString);
+
                     string[] elementsInName = finalString.Split(' ');
                     
                     Elements = Elements.Select(s => s.ToUpper()).ToArray();
@@ -79,7 +102,17 @@ namespace PeriodicTableName
                     Console.WriteLine();
                     foreach (string z in elementsInName)
                     {
-                        Console.Write($"{char.ToUpper(z[0]) + z.Substring(1)} ");
+                        if (z != String.Empty)
+                        {
+                            if (z.Length > 1)
+                            {
+                                Console.Write($"{char.ToUpper(z[0]) + z.Substring(1)} ");
+                            }
+                            else
+                            {
+                                Console.Write($"{char.ToUpper(z[0])} ");
+                            }
+                        }
                     }
                     return;
                 }

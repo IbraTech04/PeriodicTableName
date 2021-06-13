@@ -85,8 +85,6 @@ namespace PeriodicTableName
 
                     finalString = somethingElse.Substring(0, index);
 
-                    Console.WriteLine("Debug " + finalString);
-
                     string[] elementsInName = finalString.Split(' ');
                     
                     Elements = Elements.Select(s => s.ToUpper()).ToArray();

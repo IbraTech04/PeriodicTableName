@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PeriodicTableName
 {
@@ -33,31 +34,55 @@ namespace PeriodicTableName
                 }
                 if (!found)
                 {
-                    ElementsFromName[i] = " ";
+                    ElementsFromName[i] = null;
                 }
             }
 
-            for (int i = 0; i < ElementsFromName.Count; i++)
+            ElementsFromName = ElementsFromName.Where(s => !string.IsNullOrWhiteSpace(s)).Distinct().ToList();
+
+            /*foreach (string i in ElementsFromName)
             {
-                if (ElementsFromName[i] == " ")
+                Console.WriteLine(i);
+            }*/
+
+            for (int i = 0; i < Math.Pow(ElementsFromName.Count, ElementsFromName.Count); i++)
+            {
+                ElementsFromName.Shuffle();
+                string Something = string.Join("", ElementsFromName);
+                string somethingElse = string.Join(" ", ElementsFromName);
+                if (Something.Substring(0,enteredName.Length) == (enteredName))
                 {
-                    ElementsFromName.RemoveAt(i);
+                    Console.WriteLine("Congratulations! Your name can be made from the periodic table:");
+                    int index = Something.IndexOf(enteredName);
+                    string finalString = somethingElse.Substring(index, index + (somethingElse.Length - enteredName.Length));
+                    Console.WriteLine(finalString);
+                    string[] elementsInName = finalString.Split(' ');
+                    
+                    Elements = Elements.Select(s => s.ToUpper()).ToArray();
+
+                    for (int j = 0; j < elementsInName.Length; j++)
+                    {
+                        Console.WriteLine(ElementNames[Array.IndexOf(Elements, elementsInName[j].ToUpper())]);
+                    }
+                    return;
                 }
             }
+            Console.WriteLine("Unfortunately your name cannot be spelled out by the elements of the periodic table");
+        }
+    }
+    static class test { 
+        private static Random rng = new Random();
 
-            foreach (string s in ElementsFromName)
+        public static void Shuffle<T>(this IList<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
             {
-                Console.WriteLine(s);
-            }
-
-            if ((ElementsFromName[0].Contains(enteredName[0]) || ElementsFromName[1].Contains(enteredName[0])) && (ElementsFromName[ElementsFromName.Count-1].Contains(enteredName[enteredName.Length-1]) || ElementsFromName[ElementsFromName.Count - 2].Contains(enteredName[enteredName.Length - 1])))
-            {
-                Console.WriteLine("Congratulations! Your name can be made from elements on the periodic table!");
-            }
-
-            else
-            {
-                Console.WriteLine("Sorry, your name cannot be made up from the periodic table :(");
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
             }
         }
     }

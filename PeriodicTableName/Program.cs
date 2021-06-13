@@ -56,8 +56,13 @@ namespace PeriodicTableName
                 }
                 if (Something.Substring(0,enteredName.Length) == (enteredName))
                 {
-                    Console.WriteLine("Congratulations! Your name can be made from the periodic table:");
-                    string finalString = somethingElse.Substring(0, (somethingElse.Length - Something.Length) + enteredName.Length - 1); 
+                    Console.WriteLine("\nCongratulations! Your name can be made from the periodic table:");
+                    int toSubtract = 0;
+                    if (enteredName.Length % 2 == 0)
+                    {
+                        toSubtract = 1;
+                    }
+                    string finalString = somethingElse.Substring(0, (somethingElse.Length - Something.Length) + enteredName.Length - toSubtract); 
                     
                     string[] elementsInName = finalString.Split(' ');
                     
@@ -68,14 +73,18 @@ namespace PeriodicTableName
                         int newIndex = Array.IndexOf(Elements, elementsInName[j].ToUpper());
                         if (newIndex != -1)
                         {
-                            Console.WriteLine($"{ ElementNames[newIndex]} (Element Number {newIndex+1})");
+                            Console.WriteLine($"\n{ ElementNames[newIndex]} \n Element Number {newIndex+1} \n Element Symbol: {Elements[newIndex]}");
                         }
                     }
-                    Console.WriteLine(finalString);
+                    Console.WriteLine();
+                    foreach (string z in elementsInName)
+                    {
+                        Console.Write($"{char.ToUpper(z[0]) + z.Substring(1)} ");
+                    }
                     return;
                 }
             }
-            Console.WriteLine("Unfortunately your name cannot be spelled out by the elements of the periodic table");
+            Console.WriteLine("\nUnfortunately your name cannot be spelled out by the elements of the periodic table");
         }
     }
     static class test { 
